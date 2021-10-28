@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/space.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+div {
+    display: block;
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.orbita {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid rgb(231, 231, 231);
+    transform-style: preserve-3d;
+    transform: rotatex(70deg) rotatey(0deg) rotatez(0deg);
+}
+
+.moon,
+.moon img {
+    width: 70px;
+    height: 70px;
+}
+
+.earth,
+.earth img {
+    width: 380px;
+    height: 380px;
+}
+
+.moon {
+    transform: rotatez( 0deg) translate(245px) rotatey( 90deg) rotatex( 90deg);
+    animation: orbita 5s linear infinite;
+    background-image: url('../img/moon.svg');
+}
+
+.moon img {
+    animation: shadow-moon 5s linear infinite;
+}
+
+.earth {
+    transform: rotatex(-70deg) rotatey(0deg) rotatez(0deg);
+}
+
+@keyframes orbita {
+    0% {
+        transform: rotatez( 0deg) translate(250px) rotatey( 90deg) rotatex( 90deg);
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+    }
+    25% {
+        box-shadow: inset 60px 60px 60px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: rotatez( 180deg) translate(250px) rotatey( 90deg) rotatex( 270deg);
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+    75% {
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        transform: rotatez( 360deg) translate(250px) rotatey( 90deg) rotatex( 450deg);
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width:680px) {
+    .container {
+        width: 100%;
+    }
+    .orbita {
+        width: 300px;
+        height: 300px;
+    }
+    .moon,
+    .moon img {
+        width: 30px;
+        height: 30px;
+    }
+    .earth,
+    .earth img {
+        width: 200px;
+        height: 200px;
+    }
+    .moon {
+        transform: rotatez( 0deg) translate(148px) rotatey( 90deg) rotatex( 90deg);
+        animation: orbita 5s linear infinite;
+    }
+    @keyframes orbita {
+        0% {
+            transform: rotatez( 0deg) translate(148px) rotatey( 90deg) rotatex( 90deg);
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+        25% {
+            box-shadow: inset 60px 60px 60px rgba(0, 0, 0, 0.5);
+        }
+        50% {
+            transform: rotatez( 180deg) translate(148px) rotatey( 90deg) rotatex( 270deg);
+            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+        75% {
+            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+        100% {
+            transform: rotatez( 360deg) translate(148px) rotatey( 90deg) rotatex( 450deg);
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
